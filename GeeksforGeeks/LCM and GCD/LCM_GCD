@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define ll long long  
+#define ll long long 
 using namespace std; 
 void solve(); 
 int main() 
@@ -22,7 +22,23 @@ int main()
     cerr << "time taken : " << (float)clock() / CLOCKS_PER_SEC << " secs" << endl; 
     return 0; 
 } 
+
+ll gcd(ll a, ll b) {
+    if (b == 0) {
+        return a;
+    }
+    return gcd(b, a%b);
+}
+
+ll lcm(ll a, ll b) {
+    return (a * b) / gcd(a, b);
+}
+
 void solve() 
 { 
-	
+	ll x, y;
+    cin >> x >> y;
+
+    cout << lcm(x, y) << " ";
+    cout << gcd(x, y) << "\n";
 }
