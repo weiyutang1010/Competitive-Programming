@@ -29,7 +29,9 @@ int main()
     int line_num = 0;
     int sum = 0;
     map<int, bool> visited;
-    vector<int> j_or_n;
+    vector<int> j_or_n; // Index of "jmp" and "nop" instructions
+
+    //Run instructions and store index of every jmp and nop
     while(!visited[line_num]) {
         visited[line_num] = 1;
 
@@ -45,6 +47,7 @@ int main()
         }    
     }
 
+    //Brute force by running after swapping each "jmp" and "nop"
     for (int i = 0; i < (int)j_or_n.size(); i++) {
         if (v[j_or_n[i]].substr(0, 3) == "jmp") {
             v[j_or_n[i]] = "nop" + v[j_or_n[i]].substr(3);

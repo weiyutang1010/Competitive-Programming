@@ -31,7 +31,6 @@ int main()
     map<int, bool> visited;
     while(!visited[line_num]) {
         visited[line_num] = 1;
-        // Process input
         if (v[line_num].substr(0, 3) == "nop") {
             line_num++;
         } else if (v[line_num].substr(0, 3) == "acc") {
