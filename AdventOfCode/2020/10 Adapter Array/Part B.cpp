@@ -35,6 +35,7 @@ int main()
 
     vector<int64_t> dp(adapter + 1, 0);
     dp[0] = 1;
+    // dp, similiar to coin change problem
     for (int i = 1; i < (int)v.size(); i++) {
         for (int j = 1; j <= 3; j++) {
             if (i - j >= 0 && v[i] - v[i - j] <= 3) {
