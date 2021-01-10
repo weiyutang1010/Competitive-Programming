@@ -17,22 +17,34 @@ using namespace std;
 const int MOD = 1e9 + 7;
 
 void solve() {
-    int64_t w, h, n;
-    cin >> w >> h >> n;
-
-    int64_t ans = 0;
-    int64_t val1 = 1, val2 = 1;
-    // a & 1 returns true if a is odd and false otherwise
-    // a & -a returns largest power of 2 that divides a. e.g. 10 & -10 returns 2 where 10/2 = 5
-    if (!(w & 1)) val1 = (w & -w);
-    if (!(h & 1)) val2 = (h & -h);
-
-    ans = val1 * val2;
-    if (ans >= n) {
-        cout << "Yes" << endl;
-    } else {
-        cout << "No" << endl;
+    int n;
+    cin >> n;
+    int temp;
+    int ones = 0, twos = 0;
+    
+    for (int i = 0; i < n; i++) {
+        cin >> temp;
+        if (temp == 1) {
+            ones++;
+        } else {
+            twos++;
+        }
     }
+
+    if (ones % 2) {
+        cout << "NO" << endl;
+        return;
+    }
+
+    twos = twos % 2;
+    
+    if (twos && ones < 2) {
+        cout << "NO" << endl;
+    } else {
+        cout << "YES" << endl;
+    }
+
+
 }
  
 int main() 
