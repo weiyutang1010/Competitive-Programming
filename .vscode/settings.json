@@ -7,6 +7,8 @@
         "deque": "cpp",
         "string": "cpp",
         "vector": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "*.tcc": "cpp",
+        "list": "cpp"
     }
 }
