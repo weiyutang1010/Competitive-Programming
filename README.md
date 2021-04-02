@@ -1,6 +1,6 @@
 # Competitive Programming
 
-A collection of my solutions from practice questions and cp-contests.
+A collection of solutions for competitive programming questions.
 
 Codeforces: [@weiyutang](https://codeforces.com/profile/weiyutang)  
 LeetCode: [@weiyutang1010](https://leetcode.com/weiyutang1010/)  
