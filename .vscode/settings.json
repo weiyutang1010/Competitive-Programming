@@ -9,6 +9,8 @@
         "vector": "cpp",
         "iostream": "cpp",
         "*.tcc": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "filesystem": "cpp",
+        "ostream": "cpp"
     }
 }
