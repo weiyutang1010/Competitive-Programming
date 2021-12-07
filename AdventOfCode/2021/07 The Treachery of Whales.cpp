@@ -38,7 +38,7 @@ void part1(vector<int>& v) {
     int n = v.size();
     sort(v.begin(), v.end());
    
-    // Find the median
+    // Find the cost to median
     int ans = 0;
     for (int& x: v) {
         ans += abs(x - v[n/2]);
@@ -51,8 +51,9 @@ void part2(vector<int>& v) {
 
     // Since max element is around 1000, brute force for solution
     int n = v.size();
+    int max_n = *max_element(v.begin(), v.end());
     int64_t ans = INT64_MAX;
-    for (int i = 0; i <= *max_element(v.begin(), v.end()); i++) {
+    for (int i = 0; i <= max_n; i++) {
         int64_t cost = 0;
         for (int j = 0; j < n; j++) {
             int64_t dist = abs(v[j] - i);
