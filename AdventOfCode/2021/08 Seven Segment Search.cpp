@@ -68,7 +68,7 @@ void part2(vector<vector<string>>& input, vector<vector<string>>& output) {
         vector<string> v(10);
 
         for (string& st: input[i]) {
-            // Match numbers that are already known
+            // Match digits that have unique number segment
             int m = st.size();
             if (m == 2) {
                 v[1] = st;
@@ -116,8 +116,8 @@ void part2(vector<vector<string>>& input, vector<vector<string>>& output) {
             }
         }
 
-        int val = 0; int j = 1000;
         // Add up value of output
+        int val = 0; int j = 1000;
         for (string& st: output[i]) {
             for (int i = 0; i < 10; i++) {
                 // Find two string with same unique characters
