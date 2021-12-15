@@ -46,7 +46,6 @@ void part1(vector<vector<int>>& board) {
 
     // Dijkstra's algorithm
     vector<vector<int>> dist(n, vector<int> (m, INT_MAX));
-    vector<vector<int>> visited(n, vector<int> (m));
     priority_queue<vector<int>, vector<vector<int>>, compare> pq;
 
     pq.push({0, 0, 0});
@@ -58,7 +57,7 @@ void part1(vector<vector<int>>& board) {
         pq.pop();
 
         for (auto& [x, y]: dir) {
-            if (i + x >= 0 && i + x < n && j + y >= 0 && j + y < m && !visited[i+x][j+y]) {
+            if (i + x >= 0 && i + x < n && j + y >= 0 && j + y < m) {
                 if (dist[i+x][j+y] > curr_dist + board[i+x][j+y]) {
                     dist[i+x][j+y] = curr_dist + board[i+x][j+y];
                     pq.push({dist[i+x][j+y], i+x, j+y});
@@ -106,7 +105,6 @@ void part2(vector<vector<int>>& board) {
     
     // Dijkstra's algorithm
     vector<vector<int>> dist(n, vector<int> (m, INT_MAX));
-    vector<vector<int>> visited(n, vector<int> (m));
     priority_queue<vector<int>, vector<vector<int>>, compare> pq;
 
     pq.push({0, 0, 0});
@@ -118,7 +116,7 @@ void part2(vector<vector<int>>& board) {
         pq.pop();
 
         for (auto& [x, y]: dir) {
-            if (i + x >= 0 && i + x < n && j + y >= 0 && j + y < m && !visited[i+x][j+y]) {
+            if (i + x >= 0 && i + x < n && j + y >= 0 && j + y < m) {
                 if (dist[i+x][j+y] > curr_dist + board[i+x][j+y]) {
                     dist[i+x][j+y] = curr_dist + board[i+x][j+y];
                     pq.push({dist[i+x][j+y], i+x, j+y});
